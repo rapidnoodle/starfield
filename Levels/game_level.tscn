@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxibf7q4ga0hl"]
+
+[ext_resource type="PackedScene" uid="uid://c3w5pqwtj32mo" path="res://Characters/player.tscn" id="1_pw5je"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2efo2"]
+size = Vector2(20, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqceq"]
+size = Vector2(1920, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1e42"]
+size = Vector2(1920, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e4sg"]
+size = Vector2(20, 1080.13)
+
+[node name="GameLevel" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_pw5je")]
+position = Vector2(28, 30)
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="Left" type="CollisionShape2D" parent="Walls"]
+position = Vector2(0, 540)
+shape = SubResource("RectangleShape2D_2efo2")
+
+[node name="Top" type="CollisionShape2D" parent="Walls"]
+position = Vector2(960, 0)
+shape = SubResource("RectangleShape2D_hqceq")
+
+[node name="Down" type="CollisionShape2D" parent="Walls"]
+position = Vector2(960, 1080)
+shape = SubResource("RectangleShape2D_b1e42")
+
+[node name="Right" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1920, 540)
+shape = SubResource("RectangleShape2D_0e4sg")
